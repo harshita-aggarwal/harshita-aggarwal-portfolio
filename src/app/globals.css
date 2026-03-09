@@ -138,6 +138,73 @@ a {
     @apply text-muted;
   }
 
+  /* ── About Page ── */
+  .about-section {
+    @apply py-20;
+  }
+
+  .about-heading {
+    @apply text-heading text-4xl mb-8 text-center sm:text-5xl font-bold tracking-tight;
+  }
+
+  .about-heading-accent {
+    @apply text-primary;
+  }
+
+  .about-bio {
+    @apply text-secondary text-lg leading-relaxed text-center max-w-3xl mx-auto;
+  }
+
+  /* ── Skills ── */
+  .skills-grid {
+    @apply grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6;
+  }
+
+  .skill-card {
+    @apply bg-surface-raised border border-border rounded-lg p-6
+         text-body text-sm font-medium text-center
+         hover:border-primary transition-colors duration-200 shadow-md;
+  }
+
+  .skill-card-icon {
+    @apply text-secondary mb-4 w-8 h-8;
+  }
+
+  .skill-card-title {
+    @apply text-heading font-semibold text-xl mb-2;
+  }
+
+  .skill-card-list {
+    @apply text-body text-sm space-y-2;
+  }
+  /* ── Timeline (Experience & Education) ── */
+  /* ── Timeline (modern card grid) ── */
+  .timeline {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch;
+  }
+
+  .timeline-item {
+    @apply bg-surface border border-border rounded-xl p-6
+         hover:border-primary transition-colors duration-200 flex flex-col;
+  }
+
+  .timeline-date {
+    @apply inline-block text-xs font-semibold text-primary
+         bg-primary/10 px-3 py-1 rounded-full mb-3;
+  }
+
+  .timeline-title {
+    @apply text-heading font-bold text-lg mb-1;
+  }
+
+  .timeline-subtitle {
+    @apply text-muted text-sm font-medium mb-3;
+  }
+
+  .timeline-body {
+    @apply text-body text-sm leading-relaxed;
+  }
+
   /* ── Hero ── */
   .hero {
     @apply min-h-screen flex items-center bg-radial from-bg via-bg to-surface;
