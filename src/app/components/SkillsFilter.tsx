@@ -77,7 +77,7 @@ export default function SkillsFilter() {
             onClick={() => setActive(cat)}
             className={`btn transition-all duration-200 ${
               active === cat
-                ? "btn-secondary scale-105 shadow-md"
+                ? "btn-primary scale-105 shadow-md"
                 : "border border-border text-muted hover:text-primary hover:border-primary"
             }`}
           >
@@ -95,7 +95,7 @@ export default function SkillsFilter() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="bg-surface border border-border rounded-2xl p-8 max-w-3xl mx-auto shadow-md hover:border-primary"
+          className="bg-surface border border-border rounded-2xl p-8 max-w-3xl mx-auto shadow-md"
         >
           
 

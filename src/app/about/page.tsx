@@ -3,7 +3,7 @@ import SkillsFilter from "../components/SkillsFilter";
 const AboutPage = () => {
   return (
     <div className="container about-section">
-      <h1 className="about-heading">About Me</h1>
+      <h1 className="about-heading">About <span className="about-heading-accent">Me</span></h1>
 
       <section className="mb-16">
         <p className="about-bio">
