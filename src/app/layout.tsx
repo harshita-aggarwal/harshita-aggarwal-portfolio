@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ThemeProvider } from "./context/ThemeContext";
+import ParticleBackground from "./components/ParticleBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg transition-colors text-body`}
       >
+        <ParticleBackground />
         <ThemeProvider>
           <Navbar />
-        <main className="min-h-screen pt-24">{children}</main>
+        <main className="min-h-screen pt-24 relative z-10">{children}</main>
         <Footer />
         </ThemeProvider>
         

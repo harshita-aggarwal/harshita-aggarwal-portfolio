@@ -4,7 +4,7 @@ import { FaGithub, FaWordpress } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer relative z-10">
         <div className="container max-w-7xl mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row  items-center justify-between">
                 <div className="mb-4 md:mb-0 text-center md:text-left">

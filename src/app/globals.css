@@ -140,7 +140,7 @@ a {
 
   /* ── About Page ── */
   .about-section {
-    @apply py-20;
+    @apply py-10;
   }
 
   .about-heading {

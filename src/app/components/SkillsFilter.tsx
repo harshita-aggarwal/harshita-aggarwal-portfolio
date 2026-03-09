@@ -9,6 +9,7 @@ import {
   FaDatabase,
   FaChartBar,
 } from "react-icons/fa6";
+import { FaBrain } from "react-icons/fa";
 
 const categories = [
   "All",
@@ -18,6 +19,7 @@ const categories = [
   "Databases",
   "DevOps",
   "Data Analysis",
+  "AI",
 ];
 
 const skills = [
@@ -48,6 +50,11 @@ const skills = [
   { label: "PowerBI / Tableau", category: "Data Analysis" },
   { label: "MS Excel", category: "Data Analysis" },
   { label: "NumPy / Pandas / Matplotlib", category: "Data Analysis" },
+  // AI
+  { label: "AWS Bedrock", category: "AI" },
+  { label: "AWS Lex", category: "AI" },
+  { label: "LLMs (Claude)", category: "AI" },
+  { label: "Prompt Engineering", category: "AI" },
 ];
 
 const categoryIcons: Record<string, React.ReactNode> = {
@@ -57,6 +64,7 @@ const categoryIcons: Record<string, React.ReactNode> = {
   Databases: <FaDatabase className="inline mr-2" />,
   DevOps: <FaGears className="inline mr-2" />,
   "Data Analysis": <FaChartBar className="inline mr-2" />,
+  AI: <FaBrain className="inline mr-2" />,
 };
 
 export default function SkillsFilter() {
@@ -97,8 +105,6 @@ export default function SkillsFilter() {
           transition={{ duration: 0.2 }}
           className="bg-surface border border-border rounded-2xl p-8 max-w-3xl mx-auto shadow-md"
         >
-          
-
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-3">
             {filtered.map((skill) => (
