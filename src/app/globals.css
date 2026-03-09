@@ -248,6 +248,18 @@ a {
     @apply flex justify-center space-x-4 mb-8;
   }
 
+  /* ── Form ── */
+  .form-input {
+    @apply w-full bg-surface-raised border border-border rounded-lg px-4 py-2.5
+         text-body placeholder:text-muted
+         focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary
+         transition-colors duration-200;
+  }
+
+  .form-label {
+    @apply text-heading text-sm font-medium mb-1.5 block;
+  }
+
   /* ── Footer ── */
   .footer {
     @apply bg-surface border-t border-border;

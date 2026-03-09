@@ -59,48 +59,48 @@ const ContactPage = () => {
 
   return (
     <div className="container max-w-7xl py-20 mx-auto">
-      <h1 className="text-4xl font-bold mb-20 text-center">Contact Me</h1>
+      <h1 className="text-4xl font-bold mb-16 text-center">Contact Me</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-8">
-          <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-          <p className="text-secondary md:w-2/3">
+          <h2 className="text-2xl font-semibold mb-4 text-heading">Get in Touch</h2>
+          <p className="text-body md:w-2/3">
             I&apos;m always open to discussing new projects, creative ideas, or
             opportunities to be part of your visions.
           </p>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <FaEnvelope className="w-6. h-6 text-primary" />
+          <div className="space-y-4  text-center md:text-left">
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <FaEnvelope className="w-6 h-6 text-secondary" />
               <div>
                 <h3 className="text-semibold">Email</h3>
                 <Link
                   href="mailto:haggarw5@asu.edu"
-                  className="text-secondary hover:text-primary-hover"
+                  className="text-body hover:text-primary-hover"
                 >
                   haggarw5@asu.edu
                 </Link>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <FaPhone className="w-6. h-6 text-primary" />
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <FaPhone className="w-6 h-6 text-secondary" />
               <div>
                 <h3 className="text-semibold">Phone</h3>
                 <Link
                   href="tel:+16025659205"
-                  className="text-secondary hover:text-primary-hover"
+                  className="text-body hover:text-primary-hover"
                 >
                   +1(602) 565-9205
                 </Link>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <FaMapMarkerAlt className="w-6. h-6 text-primary" />
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <FaMapMarkerAlt className="w-6 h-6 text-secondary" />
               <div>
                 <h3 className="text-semibold">Location</h3>
-                <p className="text-secondary">San Diego, CA</p>
+                <p className="text-body">San Diego, CA</p>
               </div>
             </div>
           </div>
@@ -109,7 +109,7 @@ const ContactPage = () => {
         <div className="card">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
+              <label htmlFor="name" className="form-label">
                 Name
               </label>
               <input
@@ -120,12 +120,12 @@ const ContactPage = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="John Doe"
-                className="w-full px-4 py-2 rounded-md border border-border bg-bg focus:ring-2 focus:ring-primary focus:border-none"
+                className="form-input"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="email" className="form-label">
                 Email
               </label>
               <input
@@ -134,14 +134,14 @@ const ContactPage = () => {
                 name="email"
                 required
                 placeholder="johndoe@example.com"
-                className="w-full px-4 py-2 rounded-md border border-border bg-bg focus:ring-2 focus:ring-primary focus:border-none"
+                className="form-input"
               />
             </div>
 
             <div>
               <label
                 htmlFor="message"
-                className="block text-sm font-medium mb-2"
+                className="form-label"
               >
                 Message
               </label>
@@ -151,7 +151,7 @@ const ContactPage = () => {
                 id="message"
                 name="message"
                 placeholder="Your message..."
-                className="w-full px-4 py-2 rounded-md border border-border bg-bg focus:ring-2 focus:ring-primary focus:border-none"
+                className="form-input"
               />
             </div>
 

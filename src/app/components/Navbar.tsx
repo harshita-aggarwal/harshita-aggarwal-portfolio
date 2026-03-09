@@ -1,10 +1,11 @@
 "use client";
-import { MoonIcon } from "@heroicons/react/24/outline";
+import { MoonIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SunIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
+import { BsThreeDots } from "react-icons/bs";
 
 const Navbar = () => {
   const {theme, toggleTheme} = useTheme();
@@ -44,7 +45,29 @@ const Navbar = () => {
             })}
             <button onClick={toggleTheme} className="btn hover:bg-primary-hover hover:text-white transition-colors">{theme === "dark" ? <SunIcon className="w-5 h-5"/> : <MoonIcon className="w-5 h-5"/>}</button>
           </div>
+
+          <button onClick={toggleMobileMenu} className="md:hidden btn hover:bg-primary-hover hover:text-white transition-colors">
+            {isMobileMenuOpen ? (<XMarkIcon className="w-6 h-6" />) : (<BsThreeDots className="w-6 h-6"/>)}
+          </button>
         </div>
+        {
+          isMobileMenuOpen && (
+            <div className="md:hidden">
+              <div className="py-4 space-y-4">
+                {
+                  menuItems.map((item, index) => (
+                    <div key={index} onClick={toggleMobileMenu}>
+                      <Link href={item.href} className="block py-2 hover:text-primary transition-colors">{item.label}</Link>
+                    </div>
+                  ))
+                }
+                <div>
+                  <button onClick={toggleTheme} className="flex items-center hover:text-primary transition-colors">{theme === "dark" ? <><SunIcon className="w-5 h-5 mr-2"/> Light Mode</> : <><MoonIcon className="w-5 h-5 mr-2"/> Dark Mode</>}</button>
+                </div>
+              </div>
+            </div>
+          )
+        }
       </div>
     </nav>
   );
