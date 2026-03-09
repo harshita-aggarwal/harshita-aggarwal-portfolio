@@ -17,7 +17,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
     githubLink: "https://github.com",
     demoLink: "https://demo.com",
-    image: "/projects/portfolio-website.jpg",
+    image: "/projects/portfolio-website.png",
   },
   {
     title: "Rewind",
