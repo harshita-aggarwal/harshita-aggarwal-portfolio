@@ -1,5 +1,3 @@
-import { FaCloud, FaDatabase, FaServer } from "react-icons/fa";
-import { FaCode, FaGears } from "react-icons/fa6";
 import SkillsFilter from "../components/SkillsFilter";
 
 const AboutPage = () => {
