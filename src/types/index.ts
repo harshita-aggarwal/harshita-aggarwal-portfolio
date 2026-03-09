@@ -7,7 +7,7 @@ export interface Project {
   image: string;
 }
 
-export interface Blog {
+export interface Certification {
     title: string;
     excerpt: string;
     date: string;

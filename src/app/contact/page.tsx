@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
@@ -12,13 +13,49 @@ interface FormData {
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 const ContactPage = () => {
-  const [] = useState<FormData>({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
 
   const [status, setStatus] = useState<FormStatus>("idle");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.SubmitEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setStatus("error");
+      console.error("Error sending message", error);
+    }
+  };
 
   return (
     <div className="container max-w-7xl py-20 mx-auto">
@@ -70,7 +107,7 @@ const ContactPage = () => {
         </div>
 
         <div className="card">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name
@@ -80,6 +117,8 @@ const ContactPage = () => {
                 id="name"
                 name="name"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="John Doe"
                 className="w-full px-4 py-2 rounded-md border border-border bg-bg focus:ring-2 focus:ring-primary focus:border-none"
               />
@@ -116,7 +155,17 @@ const ContactPage = () => {
               />
             </div>
 
-            <button type="submit" className="w-full btn btn-secondary" >{status === "loading" ? "Sending..." : "Send Message"}</button>
+            <button type="submit" className="w-full btn btn-secondary">
+              {status === "loading" ? "Sending..." : "Send Message"}
+            </button>
+            {status === "success" && (
+              <p className="text-success text-center font-semibold">Message sent successfully</p>
+            )}
+            {status === "error" && (
+              <p className="text-warning text-center font-semibold">
+                Failed to send message. Please try again later.
+              </p>
+            )}
           </form>
         </div>
       </div>

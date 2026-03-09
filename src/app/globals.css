@@ -1,52 +1,78 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #F43F5E;
-  --color-primary-hover:  #FB7185;
-  --color-secondary: #EC4899;
-  --color-dark: #1F2937;
-  --color-light: #F9FAFB;
-  --color-bg:             var(--bg);
-  --color-surface:        var(--surface);
+  --color-primary: #f43f5e;
+  --color-primary-hover: #fb7185;
+  --color-secondary: #ec4899;
+  --color-dark: #1f2937;
+  --color-light: #f9fafb;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
-  --color-heading:        var(--heading);
-  --color-body:           var(--body);
-  --color-muted:          var(--muted);
-  --color-border:         var(--border);
-  --color-text:           var(--body);
+  --color-heading: var(--heading);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-text: var(--body);
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
 
-  --font-sans: 'Inter', sans-serif;
+  --color-success-bg: var(--success-bg);
+  --color-error-bg: var(--error-bg);
+  --color-warning-bg: var(--warning-bg);
+  --color-info-bg: var(--info-bg);
+
+  --font-sans: "Inter", sans-serif;
 
   --animation-fade-in: fadeIn 0.5s ease-in-out;
   --animation-slide-up: slideUp 0.5s ease-in-out;
 }
 
 :root {
-  --bg:             #FAFAFA;   /* zinc-50  */
-  --surface:        #FFFFFF;   /* white    */
-  --surface-raised: #F4F4F5;   /* zinc-100 */
-  --heading:        #18181B;   /* zinc-900 */
-  --body:           #3F3F46;   /* zinc-700 */
-  --muted:          #A1A1AA;   /* zinc-400 */
-  --border:         #E4E4E7;   /* zinc-200 */
+  --bg: #fafafa; /* zinc-50  */
+  --surface: #ffffff; /* white    */
+  --surface-raised: #f4f4f5; /* zinc-100 */
+  --heading: #18181b; /* zinc-900 */
+  --body: #3f3f46; /* zinc-700 */
+  --muted: #a1a1aa; /* zinc-400 */
+  --border: #e4e4e7; /* zinc-200 */
 
   /* primary shifts slightly darker in light mode for readability */
-  --color-primary:       #E11D48;   /* indigo-600 */
-  --color-primary-hover: #BE123C;   /* indigo-700 */
+  --color-primary: #e11d48; /* indigo-600 */
+  --color-primary-hover: #be123c; /* indigo-700 */
+  --success: #059669;
+  --success-bg: #ecfdf5;
+  --error: #dc2626;
+  --error-bg: #fef2f2;
+  --warning: #f59e0b;
+  --warning-bg: #fffbeb;
+  --info: #0284c7;
+  --info-bg: #f0f9ff;
 }
 
 .dark {
-  --bg:             #09090B;   /* zinc-950 */
-  --surface:        #18181B;   /* zinc-900 */
-  --surface-raised: #27272A;   /* zinc-800 */
-  --heading:        #FFFFFF;   /* white    */
-  --body:           #D4D4D8;   /* zinc-300 */
-  --muted:          #71717A;   /* zinc-500 */
-  --border:         #27272A;   /* zinc-800 */
+  --bg: #09090b; /* zinc-950 */
+  --surface: #18181b; /* zinc-900 */
+  --surface-raised: #27272a; /* zinc-800 */
+  --heading: #ffffff; /* white    */
+  --body: #d4d4d8; /* zinc-300 */
+  --muted: #71717a; /* zinc-500 */
+  --border: #27272a; /* zinc-800 */
 
   /* primary is lighter in dark mode so it pops on dark bg */
-  --color-primary:       #F43F5E;   /* indigo-500 */
-  --color-primary-hover: #FB7185;   /* indigo-400 */
+  --color-primary: #f43f5e; /* indigo-500 */
+  --color-primary-hover: #fb7185; /* indigo-400 */
+
+  --success: #34d399;
+  --success-bg: #022c22;
+  --error: #f87171;
+  --error-bg: #450a0a;
+  --warning: #fbbf24;
+  --warning-bg: #1c1400;
+  --info: #38bdf8;
+  --info-bg: #082f49;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -59,19 +85,23 @@ a {
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .btn {
     @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
   }
-  
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
+
+  .btn-muted {
+    @apply bg-muted/80 text-white hover:bg-muted;
   }
-  
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/85;
+  }
+
   .btn-secondary {
     @apply bg-secondary text-white hover:bg-secondary/90;
   }
-  
+
   .navbar {
     @apply bg-surface border-b border-border;
   }
@@ -81,11 +111,11 @@ a {
   }
 
   .navbar-link-active {
-    @apply text-primary font-normal ;
+    @apply text-primary font-normal;
   }
 
   .navbar-heading {
-    @apply text-heading font-bold;
+    @apply text-heading font-bold hover:text-primary-hover;
   }
 
   .card {
@@ -106,6 +136,60 @@ a {
 
   .text-muted {
     @apply text-muted;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    @apply min-h-screen flex items-center bg-linear-to-br from-bg via-bg to-surface;
+  }
+
+  .hero-greeting {
+    @apply text-muted text-4xl md:text-6xl font-bold mb-6 tracking-wide;
+  }
+
+  .hero-name {
+    @apply text-heading;
+  }
+
+  .hero-name-accent {
+    @apply text-primary;
+  }
+
+  .hero-title {
+    @apply text-muted text-xl md:text-2xl mb-8 font-bold;
+  }
+
+  .hero-bio {
+    @apply text-body text-base sm:text-lg max-w-xl leading-relaxed;
+  }
+
+  .hero-cta-group {
+    @apply flex flex-col md:flex-row gap-4 justify-center items-center;
+  }
+
+  .hero-social-link {
+    @apply text-muted hover:text-primary transition-colors duration-200 text-sm;
+  }
+
+  .hero-social-group {
+    @apply flex justify-center space-x-4 mb-8;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    @apply bg-surface border-t border-border;
+  }
+
+  .footer-text {
+    @apply text-muted text-sm;
+  }
+
+  .footer-heading {
+    @apply text-heading hover:text-primary-hover font-semibold text-lg uppercase tracking-wider;
+  }
+
+  .footer-link {
+    @apply text-muted hover:text-primary transition-colors duration-200 text-sm;
   }
 }
 
