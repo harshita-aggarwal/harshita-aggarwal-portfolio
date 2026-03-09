@@ -140,7 +140,7 @@ a {
 
   /* ── Hero ── */
   .hero {
-    @apply min-h-screen flex items-center bg-linear-to-br from-bg via-bg to-surface;
+    @apply min-h-screen flex items-center bg-radial from-bg via-bg to-surface;
   }
 
   .hero-greeting {

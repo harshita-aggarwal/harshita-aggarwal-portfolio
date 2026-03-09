@@ -4,9 +4,10 @@ import { SunIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
-  const theme = "dark";
+  const {theme, toggleTheme} = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const pathName = usePathname();
   const toggleMobileMenu = () => {
@@ -41,7 +42,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <button className="btn hover:bg-primary-hover hover:text-surface transition-colors">{theme === "dark" ? <SunIcon className="w-5 h-5"/> : <MoonIcon className="w-5 h-5"/>}</button>
+            <button onClick={toggleTheme} className="btn hover:bg-primary-hover hover:text-white transition-colors">{theme === "dark" ? <SunIcon className="w-5 h-5"/> : <MoonIcon className="w-5 h-5"/>}</button>
           </div>
         </div>
       </div>
