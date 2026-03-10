@@ -12,7 +12,8 @@ export interface Certification {
     title: string;
     issuer: string;
     issuedOn: string;
-    expiresOn: string;
+    expiresOn: string | null;
+    expiredOn: string | null;
     verifyUrl: string | null;  
     status: "active" | "expired";
 }

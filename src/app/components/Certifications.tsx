@@ -4,7 +4,7 @@ import { certifications } from "@/src/contents/certifications";
 import Link from "next/link";
 import { FaAward, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { FaTriangleExclamation, FaSquareCheck } from "react-icons/fa6";
+
 
 export default function Certifications() {
   return (
@@ -41,31 +41,22 @@ export default function Certifications() {
 
                   {/* Dates */}
                   <div className="flex flex-col gap-2 mb-4">
-                    <div className="flex items-center gap-2 text-sm text-body">
-                      <FaSquareCheck className="text-success h-3.5 w-3.5 shrink-0" />
-                      <span>
-                        <span className="text-muted">Issued:</span>{" "}
-                        {new Date(cert.issuedOn).toLocaleDateString("en-US", {
-                          month: "long",
-                          year: "numeric",
-                        })}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-body">
-                      <FaTriangleExclamation className="text-warning h-3.5 w-3.5 shrink-0" />
-                      <span>
-                        <span className="text-muted">Expires:</span>{" "}
-                        {cert.expiresOn
-                          ? new Date(cert.expiresOn).toLocaleDateString(
-                              "en-US",
-                              {
-                                month: "long",
-                                year: "numeric",
-                              },
-                            )
-                          : "Never"}
-                      </span>
-                    </div>
+                    <span className="text-sm text-body">
+                      <span className="text-muted">Issued On:</span>{" "}
+                      {new Date(cert.issuedOn).toLocaleDateString("en-US", {
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </span>
+                    <span className="text-sm text-body">
+                      <span className="text-muted">Expires On:</span>{" "}
+                      {cert.expiresOn
+                        ? new Date(cert.expiresOn).toLocaleDateString("en-US", {
+                            month: "long",
+                            year: "numeric",
+                          })
+                        : "Never"}
+                    </span>
                   </div>
 
                   {/* Verify link */}

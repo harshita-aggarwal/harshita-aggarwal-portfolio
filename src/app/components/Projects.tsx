@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section className="container py-28 px-4">
       <div className="project-section">
-        <h2 className="section-title">Featured Projects</h2>
+        <h2 className="section-title">Featured <span className="text-primary">Projects</span></h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.filter((p) => p.featured).map((project) => (
