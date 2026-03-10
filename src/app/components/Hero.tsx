@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="max-w-3xl mx-auto text-center">
         <div className="flex flex-col mb-4 items-center">
           <Image
-            src="/profile2.jpeg"
+            src="/Profile2.jpeg"
             alt="profile image"
             width={100}
             height={100}
