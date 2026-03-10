@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="container max-w-7xl mx-auto px-4 py-8">
             <div className="flex flex-col md:flex-row  items-center justify-between">
                 <div className="mb-4 md:mb-0 text-center md:text-left">
-                    <Link className="footer-heading" href="/" >cloud gallery&trade;</Link>
+                    <Link className="footer-heading" href="/" >Portfolio</Link>
                     <p className="footer-text mt-2">&copy; {new Date().getFullYear()} Built with <FaHeart className="inline text-primary mx-1 text-xs" /> by Harshita</p>
                 </div>
 
