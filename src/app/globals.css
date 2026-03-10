@@ -284,7 +284,8 @@ a {
   }
 
   .project-card-link {
-    @apply flex items-center gap-2 text-white/65 hover:text-primary transition-colors duration-200 text-sm font-medium;
+    @apply flex items-center gap-2 text-body hover:text-primary
+         transition-colors duration-200 text-sm font-medium;
   }
 
   /* ── Form ── */
