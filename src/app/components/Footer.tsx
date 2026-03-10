@@ -1,6 +1,5 @@
-import { HeartIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { FaLinkedin } from "react-icons/fa";
+import { FaHeart, FaLinkedin } from "react-icons/fa";
 import { FaGithub, FaWordpress } from "react-icons/fa6";
 
 const Footer = () => {
@@ -10,7 +9,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row  items-center justify-between">
                 <div className="mb-4 md:mb-0 text-center md:text-left">
                     <Link className="footer-heading" href="/" >cloud gallery&trade;</Link>
-                    <p className="footer-text mt-2">&copy; {new Date().getFullYear()} Portfolio. Build with <HeartIcon/> by Harshita.</p>
+                    <p className="footer-text mt-2">&copy; {new Date().getFullYear()} Built with <FaHeart className="inline text-primary mx-1 text-xs" /> by Harshita</p>
                 </div>
 
                 <div className="flex space-x-6">
