@@ -250,12 +250,12 @@ a {
 
   /* ── Projects Section ── */
   .projects-section {
-    @apply py-20 bg-surface;
+    @apply py-20 bg-surface bg-radial from-bg via-bg to-surface;
   }
 
   .project-card {
     @apply bg-bg border border-border rounded-2xl overflow-hidden
-         transition-all duration-300;
+         transition-all duration-300 flex flex-col;
   }
 
   .project-card-image {

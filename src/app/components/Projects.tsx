@@ -1,17 +1,19 @@
 import { projects } from "@/src/contents/projects";
 import Image from "next/image";
-import React from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <section className="projects-section">
-      <div className="container">
+    <section className="container py-28 px-4">
+      <div className="project-section">
         <h2 className="section-title">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <article key={project.title} className="project-card group hover:border-primary hover:shadow-lg hover:shadow-primary/10">
+            <article
+              key={project.title}
+              className="project-card group hover:border-primary hover:shadow-lg hover:shadow-primary/10"
+            >
               <div className="project-card-image">
                 <Image
                   src={project.image}
@@ -20,8 +22,8 @@ const Projects = () => {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="project-card-body">
-                <h3 className="project-card-title group-hover:text-primary">{project.title}</h3>
+              <div className="project-card-body flex flex-col flex-1">
+                <h3 className="project-card-title">{project.title}</h3>
                 <p className="project-card-description">
                   {project.description}
                 </p>
@@ -35,7 +37,8 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
-                <div className="project-card-links">
+                {/* mt-auto pushes this to the bottom */}
+                <div className="project-card-links mt-auto">
                   <a
                     href={project.githubLink}
                     target="_blank"
