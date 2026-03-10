@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   technologies: string[];
   githubLink: string;
-  demoLink: string;
+  demoLink: string | null;
   image: string;
   featured: boolean;
 }

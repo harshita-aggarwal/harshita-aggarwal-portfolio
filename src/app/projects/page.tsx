@@ -20,7 +20,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="container max-w-7xl mx-auto py-20">
-
       {/* Header */}
       <motion.h1
         className="text-4xl sm:text-5xl font-bold text-center text-heading mb-4"
@@ -95,8 +94,10 @@ export default function ProjectsPage() {
                   />
                   {/* Featured badge */}
                   {project.featured && (
-                    <span className="absolute top-3 left-3 text-xs font-semibold
-                                     bg-primary text-white px-2.5 py-1 rounded-full">
+                    <span
+                      className="absolute top-3 left-3 text-xs font-semibold
+                                     bg-primary text-white px-2.5 py-1 rounded-full"
+                    >
                       ★ Featured
                     </span>
                   )}
@@ -133,14 +134,20 @@ export default function ProjectsPage() {
                     >
                       <FaGithub className="h-4 w-4" /> Code
                     </a>
-                    <a
-                      href={project.demoLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-card-link"
-                    >
-                      <FaExternalLinkAlt className="h-4 w-4" /> Live Demo
-                    </a>
+                    {project.demoLink ? (
+                      <a
+                        href={project.demoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="project-card-link"
+                      >
+                        <FaExternalLinkAlt className="h-4 w-4" /> Live Demo
+                      </a>
+                    ) : (
+                      <span className="project-card-link opacity-40 cursor-not-allowed">
+                        <FaExternalLinkAlt className="h-4 w-4" /> Coming Soon
+                      </span>
+                    )}
                   </div>
                 </div>
               </motion.article>
@@ -155,12 +162,15 @@ export default function ProjectsPage() {
             exit={{ opacity: 0 }}
           >
             <p className="text-4xl mb-4">🔍</p>
-            <p className="text-heading font-semibold text-lg mb-2">No projects found</p>
-            <p className="text-muted text-sm">Try searching for a different technology or keyword.</p>
+            <p className="text-heading font-semibold text-lg mb-2">
+              No projects found
+            </p>
+            <p className="text-muted text-sm">
+              Try searching for a different technology or keyword.
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
-
     </div>
   );
 }
