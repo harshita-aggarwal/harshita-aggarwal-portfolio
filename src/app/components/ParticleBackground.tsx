@@ -14,8 +14,8 @@ const CONNECTION_DISTANCE = 140;
 const MOUSE_DISTANCE = 160;
 const PARTICLE_SPEED = 0.4;
 const DOT_COLOR = "244, 63, 94"; 
-const LINE_OPACITY_MAX = 0.5;   
-const DOT_OPACITY = 0.6;        
+const LINE_OPACITY_MAX = 0.25;   
+const DOT_OPACITY = 0.45;        
 
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -94,7 +94,7 @@ export default function ParticleBackground() {
         const mdy = pts[i].y - mouse.current.y;
         const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
         if (mDist < MOUSE_DISTANCE) {
-          const opacity = (1 - mDist / MOUSE_DISTANCE) * 0.7;
+          const opacity = (1 - mDist / MOUSE_DISTANCE) * 0.5;
           ctx.beginPath();
           ctx.moveTo(pts[i].x, pts[i].y);
           ctx.lineTo(mouse.current.x, mouse.current.y);
