@@ -9,7 +9,7 @@ const Projects = () => {
         <h2 className="section-title">Featured Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.filter((p) => p.featured).map((project) => (
             <article
               key={project.title}
               className="project-card group hover:border-primary hover:shadow-lg hover:shadow-primary/10"

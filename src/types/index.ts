@@ -5,12 +5,14 @@ export interface Project {
   githubLink: string;
   demoLink: string;
   image: string;
+  featured: boolean;
 }
 
 export interface Certification {
     title: string;
-    excerpt: string;
-    date: string;
-    readTime: string;
-    slug: string;
+    issuer: string;
+    issuedOn: string;
+    expiresOn: string;
+    verifyUrl: string | null;  
+    status: "active" | "expired";
 }
