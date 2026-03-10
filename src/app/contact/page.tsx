@@ -71,7 +71,7 @@ const ContactPage = () => {
 
           <div className="space-y-4  text-center md:text-left">
             <div className="flex items-center gap-4 justify-center md:justify-start">
-              <FaEnvelope className="w-6 h-6 text-secondary" />
+              <FaEnvelope className="w-6 h-6 text-primary" />
               <div>
                 <h3 className="text-semibold">Email</h3>
                 <Link
@@ -84,7 +84,7 @@ const ContactPage = () => {
             </div>
 
             <div className="flex items-center gap-4 justify-center md:justify-start">
-              <FaPhone className="w-6 h-6 text-secondary" />
+              <FaPhone className="w-6 h-6 text-primary" />
               <div>
                 <h3 className="text-semibold">Phone</h3>
                 <Link
@@ -97,7 +97,7 @@ const ContactPage = () => {
             </div>
 
             <div className="flex items-center gap-4 justify-center md:justify-start">
-              <FaMapMarkerAlt className="w-6 h-6 text-secondary" />
+              <FaMapMarkerAlt className="w-6 h-6 text-primary" />
               <div>
                 <h3 className="text-semibold">Location</h3>
                 <p className="text-body">San Diego, CA</p>
@@ -132,6 +132,8 @@ const ContactPage = () => {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
                 placeholder="johndoe@example.com"
                 className="form-input"
@@ -142,6 +144,7 @@ const ContactPage = () => {
               <label
                 htmlFor="message"
                 className="form-label"
+                
               >
                 Message
               </label>
@@ -152,10 +155,12 @@ const ContactPage = () => {
                 name="message"
                 placeholder="Your message..."
                 className="form-input"
+                value={formData.message}
+                onChange={handleChange}
               />
             </div>
 
-            <button type="submit" className="w-full btn btn-secondary">
+            <button type="submit" className="w-full btn btn-primary">
               {status === "loading" ? "Sending..." : "Send Message"}
             </button>
             {status === "success" && (
