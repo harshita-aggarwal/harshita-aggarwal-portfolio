@@ -4,17 +4,17 @@ export const projects: Project[] = [
   {
     title: "Thinkboard",
     description:
-      "A full-stack e-commerce platform built with MERN stack, DaisyUI and Tailwind CSS.",
+      "A full-stack MERN web application for capturing, organizing, and managing your personal notes — with secure authentication so your thoughts stay private.",
     technologies: [
       "Node.js",
       "Express.js",
       "React",
       "Tailwind CSS",
       "DaisyUI",
-      "MongoDB",
+      "MongoDB", "JWT", "Redis",
     ],
     githubLink: "https://github.com/harshita-aggarwal/Thinkboard",
-    demoLink: null,
+    demoLink: "https://thinkboard-y246.onrender.com",
     image: "/projects/Thinkboard.png",
     featured: true,
   },
