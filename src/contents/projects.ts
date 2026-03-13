@@ -52,7 +52,7 @@ export const projects: Project[] = [
     githubLink: "https://github.com/harshita-aggarwal/Chatty",
     demoLink: null,
     image: "/projects/chat-app.png",
-    featured: true,
+    featured: false,
   },
   {
     title: "ToDo",
@@ -62,5 +62,14 @@ export const projects: Project[] = [
     demoLink: null,
     image: "/projects/To-Do.png",
     featured: false,
+  },
+  {
+    title: "Harshita Pearls",
+    description: "Full-stack e-commerce platform for an Indian imitation jewellery brand. Built with Next.js 15, TypeScript, Tailwind CSS v4, Supabase, and Razorpay. Features product catalog, authentication, cart, and UPI payments.",
+    technologies: ["Next.js 15", "TypeScript", "Tailwind CSS v4", "Supabase", "Prisma", "Razorpay", "PostgreSQL"],
+    githubLink: "https://github.com/harshita-aggarwal/harshita-pearls",
+    demoLink: null,
+    image: "/projects/harshita-pearls.png",
+    featured: true,
   },
 ];
