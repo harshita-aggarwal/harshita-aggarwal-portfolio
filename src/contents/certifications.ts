@@ -30,6 +30,15 @@ export const certifications: Certification[] = [
     status: "active",
   },
   {
+    title: "AWS Certified Solutions Architect, Associate",
+    issuer: "Amazon Web Services",
+    issuedOn: "2026-03-16",
+    expiresOn: "2029-03-16",
+    expiredOn: null,
+    verifyUrl: "https://cp.certmetrics.com/amazon/en/public/verify/credential/529df867f44e4f078b0d9c4c6814cd5f",
+    status: "active",
+  },
+  {
     title: "Red Hat Delivery Specialist - Automation",
     issuer: "Red Hat",
     issuedOn: "2021-06-01",
