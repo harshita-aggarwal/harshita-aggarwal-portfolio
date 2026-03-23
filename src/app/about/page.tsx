@@ -3,7 +3,9 @@ import SkillsFilter from "../components/SkillsFilter";
 const AboutPage = () => {
   return (
     <div className="container about-section">
-      <h1 className="about-heading">About <span className="about-heading-accent">Me</span></h1>
+      <h1 className="about-heading">
+        About <span className="about-heading-accent">Me</span>
+      </h1>
 
       <section className="mb-16">
         <p className="about-bio">
@@ -21,12 +23,30 @@ const AboutPage = () => {
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="timeline">
             <div className="timeline-item">
+              <p className="timeline-date">June 2025 - Present</p>
+              <h3 className="timeline-title">
+                Technological Solutions Consultant
+              </h3>
+              <p className="timeline-subtitle">
+                ASU AI Cloud Innovation Center · Remote
+              </p>
+              <ul className="timeline-body list-disc list-inside space-y-1 mt-auto pt-3">
+                <li>
+                  Contributing to AI and cloud solution development through code reviews, technical brainstorming, and agile workflows
+                </li>
+                <li>
+                  Gaining hands-on exposure to how real-world AI products are designed and shipped
+                </li>
+              </ul>
+            </div>
+
+            <div className="timeline-item">
               <p className="timeline-date">Sept 2023 — May 2025</p>
               <h3 className="timeline-title">
                 Cloud Developer & Teaching Assistant
               </h3>
               <p className="timeline-subtitle">
-                ASU AI Smart City Cloud Innovation Center · Scottsdale, AZ
+                ASU AI Cloud Innovation Center · Scottsdale, AZ
               </p>
               <ul className="timeline-body list-disc list-inside space-y-1 mt-auto pt-3">
                 <li>
@@ -50,7 +70,9 @@ const AboutPage = () => {
 
             <div className="timeline-item">
               <p className="timeline-date">July 2020 — June 2023</p>
-              <h3 className="timeline-title">DevOps Engineer - Software Configuration Management</h3>
+              <h3 className="timeline-title">
+                DevOps Engineer - Software Configuration Management
+              </h3>
               <p className="timeline-subtitle">
                 Tata Consultancy Services Ltd. · Gurugram, India
               </p>
@@ -83,7 +105,8 @@ const AboutPage = () => {
           <div className="timeline">
             <div className="timeline-item">
               <p className="timeline-date">Aug 2023 — May 2025</p>
-              <h3 className="timeline-title">Masters of Science, Computer Science
+              <h3 className="timeline-title">
+                Masters of Science, Computer Science
               </h3>
               <p className="timeline-subtitle">
                 Arizona State University · Tempe, Arizona, United States
@@ -93,7 +116,9 @@ const AboutPage = () => {
 
             <div className="timeline-item">
               <p className="timeline-date">Aug 2016 — Sept 2020</p>
-              <h3 className="timeline-title">Bachelor of Technology, Information Technology</h3>
+              <h3 className="timeline-title">
+                Bachelor of Technology, Information Technology
+              </h3>
               <p className="timeline-subtitle">
                 Guru Gobind Singh Indraprastha University · Delhi, India
               </p>
@@ -101,7 +126,6 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-
       </section>
     </div>
   );
